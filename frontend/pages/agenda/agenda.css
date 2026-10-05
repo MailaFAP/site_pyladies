@@ -1,0 +1,11 @@
+.agenda-page {
+    max-width: 864px;
+}
+
+.agenda-page .page-heading > p:last-child {
+    max-width: none;
+}
+
+.agenda-page .events-list {
+    gap: 22px;
+}
