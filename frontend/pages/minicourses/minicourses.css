@@ -1,0 +1,11 @@
+.minicourses-page {
+    max-width: 864px;
+}
+
+.minicourses-page .page-heading > p:last-child {
+    max-width: none;
+}
+
+.minicourses-page .events-list {
+    gap: 22px;
+}
