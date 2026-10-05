@@ -1,0 +1,11 @@
+.workshops-page {
+    max-width: 864px;
+}
+
+.workshops-page .page-heading > p:last-child {
+    max-width: none;
+}
+
+.workshops-page .events-list {
+    gap: 22px;
+}
