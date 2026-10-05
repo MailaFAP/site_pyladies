@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | PyLadies SP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-page">
+    <main class="admin-shell">
+        <section id="login-view" class="admin-login">
+            <p class="admin-kicker">PyLadies SP</p>
+            <h1>Área administrativa</h1>
+            <p>Gerencie eventos e membras sem editar o código.</p>
+            <form id="login-form" class="admin-form">
+                <label>Usuário <input name="username" required autocomplete="username"></label>
+                <label>Senha <input name="password" type="password" required autocomplete="current-password"></label>
+                <button class="admin-button" type="submit">Entrar</button>
+                <p id="login-message" class="form-message" role="alert"></p>
+            </form>
+        </section>
+
+        <section id="dashboard-view" hidden>
+            <header class="admin-header">
+                <div><p class="admin-kicker">Painel de controle</p><h1>Conteúdo da comunidade</h1></div>
+                <button id="logout-button" class="admin-button admin-button-secondary">Sair</button>
+            </header>
+            <p id="dashboard-message" class="form-message" role="status"></p>
+
+            <div class="admin-grid">
+                <section class="admin-panel">
+                    <div class="panel-heading"><h2>Eventos</h2><button id="cancel-event" class="text-button" hidden>Cancelar edição</button></div>
+                    <form id="event-form" class="admin-form">
+                        <input name="id" type="hidden">
+                        <label>Título <input name="titulo" required></label>
+                        <label>Categoria <select id="event-category" name="tipo" required><option>Palestras &amp; Workshops</option><option>Mini Cursos</option></select></label>
+                        <div class="form-row"><label>Data <input name="data" placeholder="13 de nov" required></label><label>Horário <input name="horario" placeholder="19:00" required></label></div>
+                        <label>Local <input name="local" placeholder="Auditório Tech SP ou Online / Remoto" required></label>
+                        <fieldset id="event-speaker-fields" class="speaker-fields">
+                            <legend>Palestrante</legend>
+                            <label>Nome <input id="event-speaker-name" name="palestrante" autocomplete="name"></label>
+                            <label>URL da imagem <input id="event-speaker-photo" name="foto_palestrante" type="url" placeholder="https://..." autocomplete="url"></label>
+                            <p id="speaker-required-hint" class="panel-hint">Obrigatório para palestras e workshops; opcional para minicursos.</p>
+                        </fieldset>
+                        <button class="admin-button" type="submit">Salvar evento</button>
+                    </form>
+                    <div id="events-table" class="admin-table-wrap"></div>
+                </section>
+
+                <section class="admin-panel">
+                    <div class="panel-heading"><h2>Membras</h2><button id="cancel-member" class="text-button" hidden>Cancelar edição</button></div>
+                    <form id="member-form" class="admin-form">
+                        <input name="id" type="hidden">
+                        <label>Nome <input name="nome" required></label>
+                        <label>URL da foto <input name="foto" type="url" required></label>
+                        <button class="admin-button" type="submit">Salvar membra</button>
+                    </form>
+                    <div id="members-table" class="admin-table-wrap"></div>
+                </section>
+
+                <section class="admin-panel admin-panel-wide">
+                    <div class="panel-heading"><h2>Formulários externos</h2><button id="cancel-form" class="text-button" hidden>Cancelar edição</button></div>
+                    <p class="panel-hint">As respostas ficam no Google Forms. Aqui você administra apenas os links exibidos no site.</p>
+                    <form id="form-form" class="admin-form">
+                        <input name="id" type="hidden">
+                        <label>Título <input name="titulo" required></label>
+                        <label>Descrição <input name="descricao" required></label>
+                        <label>Link do Google Forms <input name="url" type="url" placeholder="https://forms.google.com/..." required></label>
+                        <button class="admin-button" type="submit">Salvar formulário</button>
+                    </form>
+                    <div id="forms-table" class="admin-table-wrap"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="js/admin/dashboard.js"></script>
+</body>
+</html>
