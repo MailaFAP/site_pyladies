@@ -1,0 +1,19 @@
+.history-page {
+    max-width: 900px;
+}
+
+.history-page .history-text {
+    max-width: 900px;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.history-page .history-text p + p {
+    margin-top: 12px;
+}
+
+.history-page .history-text a {
+    color: var(--primary-color);
+    font-weight: 700;
+}
