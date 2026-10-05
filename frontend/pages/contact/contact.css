@@ -1,0 +1,12 @@
+.contact-page {
+    max-width: 864px;
+}
+
+.contact-page .page-heading > p:last-child {
+    max-width: none;
+}
+
+.contact-page .button-stack {
+    width: min(100%, 600px);
+    margin: 0 auto;
+}
